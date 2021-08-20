@@ -1,0 +1,11 @@
+.data-display p {
+  padding: 0 18px 16px;
+  font-size: 2.5rem;
+  color: white;
+  text-align-last: end;
+  margin-top: 1rem;
+}
+
+.data-display {
+  border-bottom: 2px solid #bdbbbba8;
+}

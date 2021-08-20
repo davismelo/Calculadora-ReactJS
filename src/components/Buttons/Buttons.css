@@ -1,0 +1,11 @@
+.calculator-container button {
+  padding: 0.6rem 1rem;
+  font-size: 1.5rem;
+  margin: 6px;
+  color: #f1f1f1;
+  border-radius: 50%;
+}
+
+.calculator-container button:hover {
+  background-color: #232c3fc9;
+}
