@@ -20,7 +20,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 É um calculadora com Dark mode feita com react.js que realiza contas de multiplicação, divisão, soma e subtração. 
 
 # Clone este repositório
-$ git clone <https://github.com/davismelo/Calculator-ReactJS.git>
+$ git clone <https://github.com/davismelo/Calculadora-ReactJS.git>
 
 ###  Instale as dependências
 $ npm install
