@@ -9,20 +9,40 @@ function App() {
   const [Theme, SetTheme] = useState(false);
 
   const handleNumber = (el) => {
-    let firstValue = NumberShown;
     let value = el.target.value;
-    if (value !== "AC" && value !== "C" && value !== "=") {
-      SetNumberShown(firstValue + "" + value);
-    } else if (value === "=") {
-      let result = eval(NumberShown);
-      SetNumberShown(result);
-    } else if (value === "AC") {
+    let arrData = NumberShown[NumberShown.length - 1];
+    if (value >= 0) {
+      SetNumberShown(NumberShown + "" + value);
+    }
+    if (
+      arrData !== "-" &&
+      arrData !== "+" &&
+      arrData !== "/" &&
+      arrData !== "*" &&
+      arrData !== "%" &&
+      arrData !== "."
+    ) {
+      SetNumberShown(NumberShown + "" + value);
+    }
+    if (value === "=") {
+      SetNumberShown(eval(NumberShown));
+    }
+    if (value === "AC") {
       SetNumberShown("");
-    } else if (value === "C") {
+    }
+    if (value === "C") {
       let StringN = NumberShown + "";
       SetNumberShown(StringN.slice(0, -1));
     }
   };
+
+  function handleThemeChange(e) {
+    if (e.target.checked) {
+      SetTheme(true);
+    } else {
+      SetTheme(false);
+    }
+  }
 
   return (
     <div
@@ -30,7 +50,11 @@ function App() {
       id={Theme ? "dark-mode" : "white-mode"}
     >
       <div className="top-container">
-        <Display NumberShown={NumberShown} SetTheme={SetTheme} />
+        <Display
+          handleThemeChange={handleThemeChange}
+          Theme={Theme}
+          NumberShown={NumberShown}
+        />
       </div>
       <div className="bottom-container">
         <div className="keypad-container">
